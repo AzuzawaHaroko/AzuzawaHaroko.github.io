@@ -71,6 +71,156 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-条款阅读完毕后再确认同意之后再下一步的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2022-01-06T13:39:45.000Z" itemprop="datePublished">2022-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/">条款阅读完毕后再确认同意之后再下一步的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;style type=&quot;text/css&quot;&gt;
+#article&#123;
+    width:500px;
+    height:800px;
+    background-color:aliceblue;
+    overflow:auto;
+    font-size:20px;
+&#125;
+&lt;/style&gt;
+&lt;script&gt;
+window.onload = function()&#123;
+//onscroll 在滚动条滚动时触发的事件
+var article = document.getElementById(&quot;article&quot;);
+var input = document.getElementsByTagName(&quot;input&quot;);  //获得的是类Array
+article.onscroll = function()&#123;
+    if(article.scrollHeight - article.scrollTop == article.clientHeight)&#123;   //滚动块实际块总高度-滚动距离==块定义高度/可见高度
+    input[0].disabled=false;                    //disabled为bool变量 true为禁用
+   &#125;
+
+&#125;;
+input[0].onclick = function()&#123;
+if(input[0].checked)&#123;
+          input[1].disabled=false;
+&#125;else&#123;input[1].disabled=true;&#125;
+&#125;
+
+
+
+&lt;body&gt;
+&lt;h1&gt;使用条款说明&lt;/h1&gt;
+&lt;p id=&quot;article&quot;&gt;
+随便一篇长条款 此处略
+    &lt;/p&gt;
+&lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot; /&gt;我已仔细阅读并同意
+&lt;input type=&quot;submit&quot; value=&quot;下一步&quot; disabled=&quot;disabled&quot; /&gt;
+&lt;/body&gt;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cky30wi440003g4um8u1j5wmk" data-title="条款阅读完毕后再确认同意之后再下一步的方法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-使用JS更改CSS样式的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2022-01-06T13:39:12.000Z" itemprop="datePublished">2022-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/">使用JS更改CSS样式的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;meta charset=&quot;utf-8&quot; /&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+#testBox&#123;
+width:300px;
+height:300px;
+background-color:red;   /*css样式选择用冒号！*/ /*html注释不能双斜杠*/
+
+
+
+&#125;
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function()&#123;
+var testBox = document.getElementById(&quot;testBox&quot;);//获取对象变量用引号表示字符串！！！
+var bt = document.getElementById(&quot;bt&quot;);
+var bt2 = document.getElementById(&quot;bt2&quot;);
+var bt3 = document.getElementById(&quot;bt3&quot;);
+
+bt.onclick=function()&#123;                //函数加括号！！！
+    testBox.style.width = &quot;600px&quot;;    //语法：元素.style.样式名 = 样式值
+    testBox.style.height = &quot;600px&quot;;
+    testBox.style.backgroundColor = &quot;blue&quot;; //样式名中-为非法字符 改为驼峰
+    //此方法改变的是内联样式 如果在css中写了!important会导致无法修改
+    &#125;
+bt2.onclick=function()&#123;                //函数加括号！！！
+  alert(testBox.style.backgroundColor);
+    &#125;//读取的style属性为内联样式
+/* bt3.onclick=function()&#123;
+  alert(testBox.currentstyle.backgroundColor);
+&#125;                                       //元素.currentstyle.样式名表示当前显示样式 chrome不可用
+*/
+  bt3.onclick=function()&#123;
+  var cssValue = getComputedStyle(testBox,null);
+  alert(cssValue.backgroundColor);
+  &#125;//两个方法均为只读
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cky30wi3x0000g4umesek5kdf" data-title="使用JS更改CSS样式的方法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-复选框练习-见注释" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/" class="article-date">
@@ -185,7 +335,7 @@ for(var i=0;i&lt;games.length;i++)&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/" data-id="cky07773e0001tkuma9e98i3x" data-title="复选框练习 见注释" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/" data-id="cky30wi430002g4umdh2s76wx" data-title="复选框练习 见注释" class="article-share-link">Share</a>
       
       
       
@@ -254,7 +404,7 @@ console.log(girudo(waiFuArr));
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/31/%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%B9%B6%E5%BE%AA%E7%8E%AF%E5%88%A4%E6%96%AD%E8%BE%93%E5%87%BA%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B0%E6%95%B0%E7%BB%84/" data-id="cky07773j0002tkum27131i2h" data-title="遍历数组并循环判断输出符合条件的新数组" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/31/%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%B9%B6%E5%BE%AA%E7%8E%AF%E5%88%A4%E6%96%AD%E8%BE%93%E5%87%BA%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B0%E6%95%B0%E7%BB%84/" data-id="cky30wi450004g4umfhwt1em7" data-title="遍历数组并循环判断输出符合条件的新数组" class="article-share-link">Share</a>
       
       
       
@@ -305,7 +455,7 @@ console.log(girudo(waiFuArr));
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/26/hello-world/" data-id="cky07773a0000tkumbuhz2zo0" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/26/hello-world/" data-id="cky30wi410001g4umb9xu6nci" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -346,6 +496,14 @@ console.log(girudo(waiFuArr));
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/">条款阅读完毕后再确认同意之后再下一步的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/">使用JS更改CSS样式的方法</a>
+          </li>
         
           <li>
             <a href="/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/">复选框练习 见注释</a>

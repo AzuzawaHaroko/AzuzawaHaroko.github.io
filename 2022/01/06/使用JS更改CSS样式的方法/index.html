@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | Hexo</title>
+  <title>使用JS更改CSS样式的方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="&lt;meta charset&#x3D;&quot;utf-8&quot; &#x2F;&gt; &lt;title&gt;&lt;&#x2F;title&gt; &lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt; #testBox&amp;#123; width:300px; height:300px; background-color:red;   &#x2F;*css样式选择用冒号！*&#x2F; &#x2F;*html注释不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2021/12/26/hello-world/index.html">
+<meta property="og:title" content="使用JS更改CSS样式的方法">
+<meta property="og:url" content="http://example.com/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="&lt;meta charset&#x3D;&quot;utf-8&quot; &#x2F;&gt; &lt;title&gt;&lt;&#x2F;title&gt; &lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt; #testBox&amp;#123; width:300px; height:300px; background-color:red;   &#x2F;*css样式选择用冒号！*&#x2F; &#x2F;*html注释不">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-12-26T12:53:59.306Z">
-<meta property="article:modified_time" content="2021-12-26T12:53:59.307Z">
+<meta property="article:published_time" content="2022-01-06T13:39:12.000Z">
+<meta property="article:modified_time" content="2022-01-06T13:40:58.036Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-使用JS更改CSS样式的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/12/26/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-12-26T12:53:59.306Z" itemprop="datePublished">2021-12-26</time>
+    <a href="/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2022-01-06T13:39:12.000Z" itemprop="datePublished">2022-01-06</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
+      使用JS更改CSS样式的方法
     </h1>
   
 
@@ -95,24 +95,48 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <pre><code>&lt;meta charset=&quot;utf-8&quot; /&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+#testBox&#123;
+width:300px;
+height:300px;
+background-color:red;   /*css样式选择用冒号！*/ /*html注释不能双斜杠*/
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+&#125;
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function()&#123;
+var testBox = document.getElementById(&quot;testBox&quot;);//获取对象变量用引号表示字符串！！！
+var bt = document.getElementById(&quot;bt&quot;);
+var bt2 = document.getElementById(&quot;bt2&quot;);
+var bt3 = document.getElementById(&quot;bt3&quot;);
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+bt.onclick=function()&#123;                //函数加括号！！！
+    testBox.style.width = &quot;600px&quot;;    //语法：元素.style.样式名 = 样式值
+    testBox.style.height = &quot;600px&quot;;
+    testBox.style.backgroundColor = &quot;blue&quot;; //样式名中-为非法字符 改为驼峰
+    //此方法改变的是内联样式 如果在css中写了!important会导致无法修改
+    &#125;
+bt2.onclick=function()&#123;                //函数加括号！！！
+  alert(testBox.style.backgroundColor);
+    &#125;//读取的style属性为内联样式
+/* bt3.onclick=function()&#123;
+  alert(testBox.currentstyle.backgroundColor);
+&#125;                                       //元素.currentstyle.样式名表示当前显示样式 chrome不可用
+*/
+  bt3.onclick=function()&#123;
+  var cssValue = getComputedStyle(testBox,null);
+  alert(cssValue.backgroundColor);
+  &#125;//两个方法均为只读
+</code></pre>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/26/hello-world/" data-id="cky30wi410001g4umb9xu6nci" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cky30wi3x0000g4umesek5kdf" data-title="使用JS更改CSS样式的方法" class="article-share-link">Share</a>
       
       
       
@@ -122,15 +146,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/12/31/%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%B9%B6%E5%BE%AA%E7%8E%AF%E5%88%A4%E6%96%AD%E8%BE%93%E5%87%BA%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B0%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          遍历数组并循环判断输出符合条件的新数组
+          条款阅读完毕后再确认同意之后再下一步的方法
         
       </div>
     </a>
   
+  
+    <a href="/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">复选框练习 见注释</div>
+    </a>
   
 </nav>
 
