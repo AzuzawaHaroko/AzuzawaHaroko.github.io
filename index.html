@@ -71,6 +71,263 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-滚轮事件的应用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/12/%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-01-11T16:13:18.000Z" itemprop="datePublished">2022-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/12/%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8/">滚轮事件的应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;style type=&quot;text/css&quot;&gt;
+#box&#123;
+    width:300px;
+    height:300px;
+    background-color:aliceblue;
+&#125;
+&lt;/style&gt;
+&lt;script typr=&quot;text/javascript&quot;&gt;
+window.onload = function()&#123;
+    var box = document.getElementById(&quot;box&quot;);
+    box.onwheel = function(event)&#123;            //onwheel支持所有浏览器
+        if(event.wheelDelta&gt;0)&#123;
+        box.style.height = box.clientHeight - 10 +&quot;px&quot;;           //.wheelDelta返回的正负值为滚轮上下方向
+        &#125;else&#123;
+        box.style.height = box.clientHeight + 10 +&quot;px&quot;;&#125;;
+    &#125;//往上下滚轮改变对象块的高度
+&#125;
+//如页面过大会导致调用浏览器默认滚动条 屏蔽浏览器默认行为返回false取消
+&lt;/script&gt;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/12/%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8/" data-id="ckyabf3jv0006u4um45fxa21u" data-title="滚轮事件的应用" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-对象的拖拽与产生问题的解决" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/12/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%96%E6%8B%BD%E4%B8%8E%E4%BA%A7%E7%94%9F%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" class="article-date">
+  <time class="dt-published" datetime="2022-01-11T16:12:54.000Z" itemprop="datePublished">2022-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/12/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%96%E6%8B%BD%E4%B8%8E%E4%BA%A7%E7%94%9F%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">对象的拖拽与产生问题的解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;style type=&quot;text/css&quot;&gt;
+#box&#123;
+    width:300px;
+    height:300px;
+    background-color:aliceblue;
+    position:absolute;
+&#125;
+    #box2&#123;
+    width:300px;
+    height:300px;
+    background-color:#bfa;
+    position:absolute;
+    left:500px;
+    top:500px;
+&#125;
+
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function()&#123;
+    var box = document.getElementById(&quot;box&quot;);
+    box.onmousedown = function(event)&#123;
+    var ofX = event.clientX - box.offsetLeft;
+    var ofY = event.clientY - box.offsetTop;   //使对象可以任意位置拖拽不突变
+        document.onmousemove = function(event)&#123;
+        var left = event.clientX - ofX;
+        var top = event.clientY - ofY;
+        box.style.left = left+&quot;px&quot;;
+        box.style.top = top+&quot;px&quot;;
+        &#125;
+        document.onmouseup = function()&#123;  //如果事件帮给box 会导致兄弟元素重合无法松开拖拽 应当给document绑定！
+        document.onmousemove = null;      //up写在down里
+        document.onmouseup = null;        //防止其他地方松开鼠标时触发 关闭函数
+        &#125;
+    return false;&#125;//防止全选时拖拽时适用浏览器默认事件
+
+&#125;//此方法滚动条时会错位
+1&lt;/script&gt;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/12/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%96%E6%8B%BD%E4%B8%8E%E4%BA%A7%E7%94%9F%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" data-id="ckyabf3js0002u4umd7z6g375" data-title="对象的拖拽与产生问题的解决" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-为同一事件绑定多个行为的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/12/%E4%B8%BA%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E8%A1%8C%E4%B8%BA%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2022-01-11T16:09:31.000Z" itemprop="datePublished">2022-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/12/%E4%B8%BA%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E8%A1%8C%E4%B8%BA%E7%9A%84%E6%96%B9%E6%B3%95/">为同一事件绑定多个行为的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function()&#123;
+    var bt1 = document.getElementById(&quot;bt1&quot;);
+    //bt1.onclick = function()&#123;
+    //alert(&quot;clicked&quot;);                    只能绑定一个功能 但有顺序
+    bt1.addEventListener(&quot;click&quot;,function()&#123;
+        alert(&quot;clicked&quot;);
+    &#125;,false);       //第三个参数为是否在捕获阶段触发事件 一般false
+    bt1.addEventListener(&quot;click&quot;,function()&#123;
+        alert(&quot;clicked2&quot;);
+    &#125;,false);            //addEventListener可以同时绑定多个
+ &#125;
+
+&lt;/script&gt;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/12/%E4%B8%BA%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E8%A1%8C%E4%B8%BA%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ckyabf3jn0000u4um5wcg8huc" data-title="为同一事件绑定多个行为的方法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-事件的冒泡及子元素的取消冒泡" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/" class="article-date">
+  <time class="dt-published" datetime="2022-01-11T16:04:04.000Z" itemprop="datePublished">2022-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/">事件的冒泡及子元素的取消冒泡</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;style type=&quot;text/css&quot;&gt;
+#box1&#123;
+    width:300px;
+    height:300px;
+    background-color:aliceblue;
+&#125;
+#sp1&#123;
+    background-color:#bfa;
+&#125;
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function()&#123;
+var sp1 = document.getElementById(&quot;sp1&quot;);//参数带引号！
+var box1 = document.getElementById(&quot;box1&quot;);
+
+sp1.onclick = function(event)&#123;
+   
+    alert(&quot;spanalt&quot;);
+    event.cancelBubble = true;  //此函数取消冒泡 点击产生一次告警
+    &#125;
+
+box1.onclick = function()&#123;
+    alert(&quot;divalt&quot;);    //未取消冒泡 产生2次告警
+    &#125;
+document.body.onclick = function()&#123;
+    alert(&quot;bodyalt&quot;);
+    &#125;
+</code></pre>
+<p>   }</p>
+<pre><code>&lt;/script&gt;
+</code></pre>
+<p>//span为div的子元素</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/" data-id="ckyabf3jt0003u4um7zrd7ybi" data-title="事件的冒泡及子元素的取消冒泡" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-条款阅读完毕后再确认同意之后再下一步的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
@@ -134,7 +391,7 @@ if(input[0].checked)&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cky30wi440003g4um8u1j5wmk" data-title="条款阅读完毕后再确认同意之后再下一步的方法" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ckyabf3jw0007u4umbu1yhd35" data-title="条款阅读完毕后再确认同意之后再下一步的方法" class="article-share-link">Share</a>
       
       
       
@@ -209,7 +466,7 @@ bt2.onclick=function()&#123;                //函数加括号！！！
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cky30wi3x0000g4umesek5kdf" data-title="使用JS更改CSS样式的方法" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ckyabf3ju0005u4um8d1qbi5i" data-title="使用JS更改CSS样式的方法" class="article-share-link">Share</a>
       
       
       
@@ -335,7 +592,7 @@ for(var i=0;i&lt;games.length;i++)&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/" data-id="cky30wi430002g4umdh2s76wx" data-title="复选框练习 见注释" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/" data-id="ckyabf3ju0004u4umagz054yx" data-title="复选框练习 见注释" class="article-share-link">Share</a>
       
       
       
@@ -404,7 +661,7 @@ console.log(girudo(waiFuArr));
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/31/%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%B9%B6%E5%BE%AA%E7%8E%AF%E5%88%A4%E6%96%AD%E8%BE%93%E5%87%BA%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B0%E6%95%B0%E7%BB%84/" data-id="cky30wi450004g4umfhwt1em7" data-title="遍历数组并循环判断输出符合条件的新数组" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/31/%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%B9%B6%E5%BE%AA%E7%8E%AF%E5%88%A4%E6%96%AD%E8%BE%93%E5%87%BA%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B0%E6%95%B0%E7%BB%84/" data-id="ckyabf3jw0008u4umgnb4grja" data-title="遍历数组并循环判断输出符合条件的新数组" class="article-share-link">Share</a>
       
       
       
@@ -455,7 +712,7 @@ console.log(girudo(waiFuArr));
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/26/hello-world/" data-id="cky30wi410001g4umb9xu6nci" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/26/hello-world/" data-id="ckyabf3jr0001u4um7fyrh3xo" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -498,23 +755,23 @@ console.log(girudo(waiFuArr));
       <ul>
         
           <li>
+            <a href="/2022/01/12/%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8/">滚轮事件的应用</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/12/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%96%E6%8B%BD%E4%B8%8E%E4%BA%A7%E7%94%9F%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">对象的拖拽与产生问题的解决</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/12/%E4%B8%BA%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E8%A1%8C%E4%B8%BA%E7%9A%84%E6%96%B9%E6%B3%95/">为同一事件绑定多个行为的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/">事件的冒泡及子元素的取消冒泡</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/">条款阅读完毕后再确认同意之后再下一步的方法</a>
-          </li>
-        
-          <li>
-            <a href="/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/">使用JS更改CSS样式的方法</a>
-          </li>
-        
-          <li>
-            <a href="/2022/01/04/%E5%A4%8D%E9%80%89%E6%A1%86%E7%BB%83%E4%B9%A0-%E8%A7%81%E6%B3%A8%E9%87%8A/">复选框练习 见注释</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/31/%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%B9%B6%E5%BE%AA%E7%8E%AF%E5%88%A4%E6%96%AD%E8%BE%93%E5%87%BA%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B0%E6%95%B0%E7%BB%84/">遍历数组并循环判断输出符合条件的新数组</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/26/hello-world/">Hello World</a>
           </li>
         
       </ul>

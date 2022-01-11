@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>条款阅读完毕后再确认同意之后再下一步的方法 | Hexo</title>
+  <title>事件的冒泡及子元素的取消冒泡 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt; #article&amp;#123;     width:500px;     height:800px;     background-color:aliceblue;     overflow:auto;     font-size:20px; &amp;#125; &lt;&#x2F;style&gt; &lt;script&gt; wi">
+  <meta name="description" content="&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt; #box1&amp;#123;     width:300px;     height:300px;     background-color:aliceblue; &amp;#125; #sp1&amp;#123;     background-color:#bfa; &amp;#125; &lt;&#x2F;style&gt; &lt;script typ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="条款阅读完毕后再确认同意之后再下一步的方法">
-<meta property="og:url" content="http://example.com/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="事件的冒泡及子元素的取消冒泡">
+<meta property="og:url" content="http://example.com/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt; #article&amp;#123;     width:500px;     height:800px;     background-color:aliceblue;     overflow:auto;     font-size:20px; &amp;#125; &lt;&#x2F;style&gt; &lt;script&gt; wi">
+<meta property="og:description" content="&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt; #box1&amp;#123;     width:300px;     height:300px;     background-color:aliceblue; &amp;#125; #sp1&amp;#123;     background-color:#bfa; &amp;#125; &lt;&#x2F;style&gt; &lt;script typ">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-01-06T13:39:45.000Z">
-<meta property="article:modified_time" content="2022-01-06T13:46:10.604Z">
+<meta property="article:published_time" content="2022-01-11T16:04:04.000Z">
+<meta property="article:modified_time" content="2022-01-11T16:08:34.691Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-条款阅读完毕后再确认同意之后再下一步的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-事件的冒泡及子元素的取消冒泡" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2022-01-06T13:39:45.000Z" itemprop="datePublished">2022-01-06</time>
+    <a href="/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/" class="article-date">
+  <time class="dt-published" datetime="2022-01-11T16:04:04.000Z" itemprop="datePublished">2022-01-12</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      条款阅读完毕后再确认同意之后再下一步的方法
+      事件的冒泡及子元素的取消冒泡
     </h1>
   
 
@@ -96,47 +96,42 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <pre><code>&lt;style type=&quot;text/css&quot;&gt;
-#article&#123;
-    width:500px;
-    height:800px;
+#box1&#123;
+    width:300px;
+    height:300px;
     background-color:aliceblue;
-    overflow:auto;
-    font-size:20px;
+&#125;
+#sp1&#123;
+    background-color:#bfa;
 &#125;
 &lt;/style&gt;
-&lt;script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 window.onload = function()&#123;
-//onscroll 在滚动条滚动时触发的事件
-var article = document.getElementById(&quot;article&quot;);
-var input = document.getElementsByTagName(&quot;input&quot;);  //获得的是类Array
-article.onscroll = function()&#123;
-    if(article.scrollHeight - article.scrollTop == article.clientHeight)&#123;   //滚动块实际块总高度-滚动距离==块定义高度/可见高度
-    input[0].disabled=false;                    //disabled为bool变量 true为禁用
-   &#125;
+var sp1 = document.getElementById(&quot;sp1&quot;);//参数带引号！
+var box1 = document.getElementById(&quot;box1&quot;);
 
-&#125;;
-input[0].onclick = function()&#123;
-if(input[0].checked)&#123;
-          input[1].disabled=false;
-&#125;else&#123;input[1].disabled=true;&#125;
-&#125;
+sp1.onclick = function(event)&#123;
+   
+    alert(&quot;spanalt&quot;);
+    event.cancelBubble = true;  //此函数取消冒泡 点击产生一次告警
+    &#125;
 
-
-
-&lt;body&gt;
-&lt;h1&gt;使用条款说明&lt;/h1&gt;
-&lt;p id=&quot;article&quot;&gt;
-随便一篇长条款 此处略
-    &lt;/p&gt;
-&lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot; /&gt;我已仔细阅读并同意
-&lt;input type=&quot;submit&quot; value=&quot;下一步&quot; disabled=&quot;disabled&quot; /&gt;
-&lt;/body&gt;
+box1.onclick = function()&#123;
+    alert(&quot;divalt&quot;);    //未取消冒泡 产生2次告警
+    &#125;
+document.body.onclick = function()&#123;
+    alert(&quot;bodyalt&quot;);
+    &#125;
 </code></pre>
+<p>   }</p>
+<pre><code>&lt;/script&gt;
+</code></pre>
+<p>//span为div的子元素</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ckyabf3jw0007u4umbu1yhd35" data-title="条款阅读完毕后再确认同意之后再下一步的方法" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/" data-id="ckyabf3jt0003u4um7zrd7ybi" data-title="事件的冒泡及子元素的取消冒泡" class="article-share-link">Share</a>
       
       
       
@@ -146,19 +141,19 @@ if(input[0].checked)&#123;
     
 <nav id="article-nav">
   
-    <a href="/2022/01/12/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%92%E6%B3%A1%E5%8F%8A%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%8F%96%E6%B6%88%E5%86%92%E6%B3%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/01/12/%E4%B8%BA%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E8%A1%8C%E4%B8%BA%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          事件的冒泡及子元素的取消冒泡
+          为同一事件绑定多个行为的方法
         
       </div>
     </a>
   
   
-    <a href="/2022/01/06/%E4%BD%BF%E7%94%A8JS%E6%9B%B4%E6%94%B9CSS%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/01/06/%E6%9D%A1%E6%AC%BE%E9%98%85%E8%AF%BB%E5%AE%8C%E6%AF%95%E5%90%8E%E5%86%8D%E7%A1%AE%E8%AE%A4%E5%90%8C%E6%84%8F%E4%B9%8B%E5%90%8E%E5%86%8D%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">使用JS更改CSS样式的方法</div>
+      <div class="article-nav-title">条款阅读完毕后再确认同意之后再下一步的方法</div>
     </a>
   
 </nav>
